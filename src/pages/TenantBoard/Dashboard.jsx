@@ -23,10 +23,10 @@ export default function TenantDashboard(){
         <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <p className="uppercase text-[11px] tracking-[0.25em] text-amber-300">Solaris Industrial Park – Răscruci</p>
-            <h1 className="text-3xl md:text-4xl font-semibold text-white mt-1">SC LogiTrans SRL – Hala B2</h1>
+            <h1 className="text-3xl md:text-5xl font-light text-white mt-1 font-serif-display">SC LogiTrans SRL — Hala B2</h1>
             <p className="text-blue-100/70 mt-1">Suprafață: 1.850 mp • Tip: hală + birouri • Contract valabil până la 30.09.2029</p>
           </div>
-          <a target="_blank" href="https://maps.google.com" className="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-blue-100/90 inline-flex items-center gap-2"><MapPin className="h-4"/> Vezi pe Google Maps</a>
+          <a target="_blank" rel="noreferrer" href="https://maps.google.com" className="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-blue-100/90 inline-flex items-center gap-2"><MapPin className="h-4"/> Vezi pe Google Maps</a>
         </header>
 
         <div className="grid lg:grid-cols-2 gap-6">
@@ -34,7 +34,7 @@ export default function TenantDashboard(){
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-4">
               <FileText className="text-amber-300" />
-              <h2 className="text-white text-xl font-semibold">Contract & Documente</h2>
+              <h2 className="text-white text-xl font-serif-display">Contract & Documente</h2>
             </div>
             <div className="space-y-3">
               {['Contract de închiriere (PDF)','Anexe tehnice','Plan hală (DWG/PDF)','Certificat energetic'].map((d,i)=> (
@@ -50,7 +50,7 @@ export default function TenantDashboard(){
           <section className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-4">
               <CreditCard className="text-amber-300" />
-              <h2 className="text-white text-xl font-semibold">Facturi & Plăți</h2>
+              <h2 className="text-white text-xl font-serif-display">Facturi & Plăți</h2>
             </div>
             <div className="overflow-x-auto">
               <table className="min-w-full text-sm">
@@ -80,7 +80,7 @@ export default function TenantDashboard(){
             </div>
             <div className="mt-4 flex items-center gap-4">
               <button className="bg-white/10 hover:bg-white/15 text-white border border-white/20 px-4 py-2 rounded-lg">Descarcă raport anual (PDF)</button>
-              <p className="text-xs text-blue-100/60">Integrare viitoare cu sistemul de facturare – pentru demo, datele sunt fictive.</p>
+              <p className="text-xs text-blue-100/60">Pentru demo, datele sunt fictive.</p>
             </div>
           </section>
 
@@ -89,7 +89,7 @@ export default function TenantDashboard(){
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Ticket className="text-amber-300" />
-                <h2 className="text-white text-xl font-semibold">Mentenanță & Tichete</h2>
+                <h2 className="text-white text-xl font-serif-display">Mentenanță & Tichete</h2>
               </div>
               <button onClick={()=>setShowForm(true)} className="px-4 py-2 rounded-lg bg-gradient-to-tr from-amber-400 to-yellow-300 text-slate-900 font-semibold inline-flex items-center gap-2"><Plus className="h-4"/> Deschide tichet</button>
             </div>
@@ -97,7 +97,7 @@ export default function TenantDashboard(){
               {tickets.map((t,i)=> (
                 <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
                   <div>
-                    <p className="text-white font-medium">{t.id} – {t.title}</p>
+                    <p className="text-white font-medium">{t.id} — {t.title}</p>
                     <p className="text-blue-100/70 text-sm">SLA estimat: {t.sla}</p>
                   </div>
                   <span className={`px-2 py-1 text-xs rounded-full border ${t.status==='Rezolvat'?'bg-emerald-400/15 text-emerald-200 border-emerald-400/30':t.status==='În curs'?'bg-amber-300/15 text-amber-200 border-amber-300/30':'bg-white/10 text-blue-100 border-white/20'}`}>{t.status}</span>
@@ -111,7 +111,7 @@ export default function TenantDashboard(){
         {showForm && (
           <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center" onClick={()=>setShowForm(false)}>
             <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-xl" onClick={e=>e.stopPropagation()}>
-              <h3 className="text-white text-xl font-semibold mb-4">Tichet nou</h3>
+              <h3 className="text-white text-2xl font-serif-display mb-4">Tichet nou</h3>
               <div className="grid sm:grid-cols-2 gap-3">
                 <input placeholder="Titlu" className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white sm:col-span-2"/>
                 <select className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white">
