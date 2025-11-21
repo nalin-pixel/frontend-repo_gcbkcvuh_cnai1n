@@ -77,4 +77,11 @@
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* gold shimmer sweep for major headings */
+  .gold-shimmer {
+    background-size: 200% auto;
+    transition: background-position 1.2s ease;
+  }
+  .gold-shimmer:hover { background-position: right center; }
 }
